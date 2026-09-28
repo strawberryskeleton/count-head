@@ -1,5 +1,6 @@
 
 const imgGrid = document.getElementById('img-grid')
+let totalHeads = 0
 
 const imgData = [
     {
@@ -41,14 +42,18 @@ let numImages = Math.floor(Math.random() * imgData.length)
 if (numImages == 0) numImages = 1
 // console.log(numImages)
 
+
 for (let i = 0; i < numImages; i++) {
     let imgIndex = Math.floor(Math.random() * imgData.length)
 
     // console.log(imgData[imgIndex])
     addImgFrame(imgIndex)
 
+    totalHeads += imgData[imgIndex].numHeads
+
 }
 
+console.log(totalHeads)
 
 function addImgFrame (imgIndex) {
     console.log(imgData[imgIndex])
@@ -78,7 +83,6 @@ function addImgFrame (imgIndex) {
             </div>`
     }
 
+
     imgGrid.insertAdjacentHTML('beforeend', imgFrame)
-
-
 }

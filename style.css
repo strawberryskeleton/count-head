@@ -122,6 +122,64 @@ main .img-frame::after {
 }
 
 
+main #user-guess {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    z-index: 100;
+    background-color: cornsilk;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+main #user-guess .user-input-fields {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+main #user-guess .user-input-fields input {
+    width: 2.5rem;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: aqua;
+    /* padding: 0.5rem; */
+    border-radius: 5px;
+    text-align: center;
+
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* hiding the up down arrow btns */
+main #user-guess .user-input-fields input::-webkit-outer-spin-button,
+main #user-guess .user-input-fields input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main #user-guess .user-input-fields button {
+    width: 2.5rem;
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    background-color: cadetblue;
+    border-radius: 5px;
+    text-align: center;
+    /* padding: 0.5rem; */
+}
+
+
 footer {
     height: 2rem;
     background-color: cadetblue;

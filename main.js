@@ -1,5 +1,6 @@
 
 const imgGrid = document.getElementById('img-grid')
+const userInputForm = document.getElementById('user-input-fields')
 let totalHeads = 0
 
 const imgData = [
@@ -37,6 +38,10 @@ const imgData = [
     },
 ]
 
+
+// ===================
+// MAKE IMG FRAME GRID
+// ===================
 let numImages = Math.floor(Math.random() * imgData.length)
 
 if (numImages == 0) numImages = 1
@@ -85,4 +90,37 @@ function addImgFrame (imgIndex) {
 
 
     imgGrid.insertAdjacentHTML('beforeend', imgFrame)
+}
+
+
+
+// ========================
+// USER INPUT GET AND CHECK
+// ========================
+userInputForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let userGuess = new FormData(userInputForm).get('user-guess-num')
+    console.log(userGuess)
+
+    if (userGuess == totalHeads) {
+        // console.log("correct!")
+        displayEndScreen(true)
+    } else {
+        // console.log("wrong!")
+        displayEndScreen(false)
+    }
+
+    // reload current page
+    // window.location.reload()
+})
+
+function displayEndScreen (isWin) {
+    if (isWin) {
+        console.log("correct!")
+    }
+    else {
+        console.log("wrong!")
+    }
+
 }

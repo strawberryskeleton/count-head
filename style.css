@@ -121,15 +121,20 @@ main .img-frame::after {
     z-index: 10;
 }
 
+main .img-frame.no-curtain::after {
+    content: none;
+    display: none;
+}
+
 
 main #user-guess {
     position: absolute;
-    bottom: 4rem;
+    bottom: 3rem;
     right: 4rem;
     z-index: 100;
     background-color: cornsilk;
     padding: 1rem 2rem;
-    border-radius: 1rem;
+    border-radius: 12px;
 
     display: flex;
     flex-direction: column;
@@ -177,6 +182,52 @@ main #user-guess .user-input-fields button {
     border-radius: 5px;
     text-align: center;
     /* padding: 0.5rem; */
+}
+
+
+main .win,
+main .lose {
+    display: none;
+
+    position: absolute;
+    bottom: 3rem;
+    /*👉top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);👈*/
+    background-color: cornsilk;
+    z-index: 100;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 1.3rem;
+
+    /*👉display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;👈*/
+}
+
+main .win p,
+main .lose p {
+    font-size: 1.15rem;
+    margin-top: 0.3rem;
+}
+
+main .win button,
+main .lose button {
+    margin: 0 auto;
+    margin-top: 1.75rem;
+    width: 60%;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    background-color: aquamarine;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

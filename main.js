@@ -105,22 +105,28 @@ userInputForm.addEventListener('submit', (e) => {
 
     if (userGuess == totalHeads) {
         // console.log("correct!")
-        displayEndScreen(true)
+        gameOver(true)
     } else {
         // console.log("wrong!")
-        displayEndScreen(false)
+        gameOver(false)
     }
 
     // reload current page
     // window.location.reload()
 })
 
-function displayEndScreen (isWin) {
+function gameOver (isWin) {
+    let dialogBox = ''
+
     if (isWin) {
-        console.log("correct!")
+        // console.log("correct!")
+        dialogBox = document.querySelector('.win')
+        dialogBox.style.display = "block"
     }
     else {
-        console.log("wrong!")
+        // console.log("wrong!")
+        dialogBox = document.querySelector('.lose')
+        dialogBox.style.display = "block"
     }
 
 }

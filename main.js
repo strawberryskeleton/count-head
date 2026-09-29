@@ -1,6 +1,7 @@
 
 const imgGrid = document.getElementById('img-grid')
 const userInputForm = document.getElementById('user-input-fields')
+const restartBtn = document.querySelectorAll('.restart-btn')
 let totalHeads = 0
 
 const imgData = [
@@ -111,11 +112,21 @@ userInputForm.addEventListener('submit', (e) => {
         gameOver(false)
     }
 
-    // reload current page
-    // window.location.reload()
+    // remove submit functionaluty from button
+
 })
 
 function gameOver (isWin) {
+    // remove curtains from img frames
+    let currentImgFrames = document.querySelectorAll('.img-frame')
+    
+    currentImgFrames.forEach((frame) => {
+        // console.log(frame)
+        frame.classList.add('no-curtain')
+    })
+
+
+    // show win/lose dialog box
     let dialogBox = ''
 
     if (isWin) {
@@ -130,3 +141,12 @@ function gameOver (isWin) {
     }
 
 }
+
+restartBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        console.log('restart')
+
+        // reload current page --> resets everything automatically
+        window.location.reload()
+    })
+})

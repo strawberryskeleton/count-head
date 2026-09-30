@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Sancreek&display=swap');
 
 *,
 *::before,
@@ -6,7 +6,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: "Alegreya", serif;
 }
+
+/*  font-family: "Sancreek", serif; */
 
 body {
     width: 100vw;

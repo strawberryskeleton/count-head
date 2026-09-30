@@ -10,3 +10,6 @@ https://in.pinterest.com/pin/239113061462841737/
 https://www.freecodecamp.org/news/how-to-create-a-mansory-layout-using-html-and-css/
 https://in.pinterest.com/pin/602567625186190163/
 https://in.pinterest.com/pin/31314159904899152/
+
+
+how to remove submit functionality from button of a form from js after i process the input

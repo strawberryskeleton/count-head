@@ -135,6 +135,23 @@ const imgData = [
     }
 ]
 
+const bg_music = new Audio('./assets/bg_music.mp3')
+bg_music.loop = true
+bg_music.volume = 0.7
+// bg_music.play()
+const win_effect = new Audio('./assets/win_effect.mp3')
+const lose_effect = new Audio('./assets/lose_effect.mp3')
+
+function playOnFirstInteraction() {
+    bg_music.play();
+    
+    document.removeEventListener('click', playOnFirstInteraction);
+    document.removeEventListener('keydown', playOnFirstInteraction);
+}
+
+document.addEventListener('click', playOnFirstInteraction);
+document.addEventListener('keydown', playOnFirstInteraction);
+
 
 // ===================
 // MAKE IMG FRAME GRID
@@ -229,18 +246,22 @@ function gameOver (isWin) {
         // console.log("correct!")
         dialogBox = document.querySelector('.win')
         dialogBox.style.display = "block"
+        win_effect.currentTime = 0; 
+        win_effect.play();
     }
     else {
         // console.log("wrong!")
         dialogBox = document.querySelector('.lose')
         dialogBox.style.display = "block"
+        lose_effect.currentTime = 0; 
+        lose_effect.play();
     }
 
 }
 
 restartBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
-        // console.log('restart')
+        console.log('restart')
 
         // reload current page --> resets everything automatically
         window.location.reload()

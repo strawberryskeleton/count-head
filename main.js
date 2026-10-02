@@ -246,3 +246,39 @@ restartBtn.forEach((btn) => {
         window.location.reload()
     })
 })
+
+
+// MAKE WIN?LOSE BOX FREELY DRAGGABLE
+const gameOverBoxes = document.querySelectorAll('.win, .lose')
+console.log(gameOverBoxes)
+let pos_x = 0
+let pos_y = 0
+let isDragging = false
+
+gameOverBoxes.forEach((dialogBox) => {
+
+    dialogBox.addEventListener('mousedown', (e) => {
+        isDragging = true
+
+        pos_x = e.clientX - dialogBox.offsetLeft
+        pos_y = e.clientY - dialogBox.offsetTop
+
+        dialogBox.style.bottom = `auto`
+
+        e.preventDefault()
+    })
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return
+
+        let left = e.clientX - pos_x
+        let top = e.clientY - pos_y
+
+        dialogBox.style.left = `${left}px`
+        dialogBox.style.top = `${top}px`
+    })
+
+    window.addEventListener('mouseup', (e) => {
+        isDragging = false
+    })
+})

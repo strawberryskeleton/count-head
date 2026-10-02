@@ -71,6 +71,7 @@ main {
     /* overflow-y: scroll; */
     padding: 2rem 5rem;
     margin-top: 5.5rem;
+    position: relative;
     
 }
 
@@ -256,6 +257,7 @@ main .lose {
     text-align: center;
     border-radius: 12px;
     font-size: 1.3rem;
+    cursor: grab;
 
     /*👉display: flex;
     flex-direction: column;
@@ -291,6 +293,12 @@ main .lose button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+main .win:active,
+main .lose:active {
+    cursor: grabbing;
 }
 
 

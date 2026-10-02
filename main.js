@@ -155,10 +155,10 @@ for (let i = 0; i < numImages; i++) {
 
 }
 
-console.log(totalHeads)
+// console.log(totalHeads)
 
 function addImgFrame (imgIndex) {
-    console.log(imgData[imgIndex])
+    // console.log(imgData[imgIndex])
     const selectedImgFrame = imgData[imgIndex]
     let imgFrame = ""
 
@@ -198,7 +198,7 @@ userInputForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     let userGuess = new FormData(userInputForm).get('user-guess-num')
-    console.log(userGuess)
+    // console.log(userGuess)
 
     if (userGuess == totalHeads) {
         // console.log("correct!")
@@ -240,7 +240,7 @@ function gameOver (isWin) {
 
 restartBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
-        console.log('restart')
+        // console.log('restart')
 
         // reload current page --> resets everything automatically
         window.location.reload()
@@ -250,7 +250,8 @@ restartBtn.forEach((btn) => {
 
 // MAKE WIN?LOSE BOX FREELY DRAGGABLE
 const gameOverBoxes = document.querySelectorAll('.win, .lose')
-console.log(gameOverBoxes)
+// console.log(gameOverBoxes)
+
 let pos_x = 0
 let pos_y = 0
 let isDragging = false

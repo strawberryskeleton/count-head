@@ -258,6 +258,11 @@ main #user-guess .user-input-fields button {
     font-weight: 800;
     color: var(--light-red);
     /* padding: 0.5rem; */
+    transition: all 0.2s ease-in;
+}
+
+main #user-guess .user-input-fields button:hover {
+    background-color: var(--light-purple);
 }
 
 
@@ -314,6 +319,12 @@ main .lose button {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+main .win button:hover,
+main .lose button:hover {
+    background-color: var(--light-purple);
 }
 
 main .win:active,
@@ -361,4 +372,9 @@ footer #copyright a {
     font-family: "Sancreek", serif;
     font-size: 0.8rem;
     letter-spacing: 3px;
+    transition: all 0.2s ease-in;
+}
+
+footer #copyright a:hover {
+    color: var(--light-red);
 }

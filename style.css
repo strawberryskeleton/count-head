@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Sancreek&display=swap');
 
+:root {
+    --light-purple: #562466;
+    --purple: #3A1844;
+    --black: #19081e;
+    --red: #761919;
+    --dark-red: #4b0808;
+    --light-red: #8a0f0f;
+}
+
 *,
 *::before,
 *::after {
@@ -10,12 +19,11 @@
     font-family: "Alegreya", serif;
 }
 
-/*  font-family: "Sancreek", serif; */
 
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: purple;
+    background-color: var(--purple);
     background: url('./assets/bg2.jpg');
     background-size: contain;
     /* overflow: hidden; */
@@ -28,22 +36,41 @@ body {
 
 header {
     width: 100%;
-    height: 5rem;
-    background-color: coral;
+    height: 5.5rem;
+    background-color: var(--black);
+    color: var(--red);
     z-index: 100;
 
     /* display: inline; */
     position: fixed;
     top: 0;
     left: 0;
+    text-align: center;
 }
+
+header h1 {
+    font-size: 3.2rem;
+    font-family: "Sancreek", serif;
+    letter-spacing: 2px;
+    /* margin-bottom: 0; */
+}
+
+header p {
+    position: relative;
+    top: -0.8rem;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    font-family: "Sancreek", serif;
+    /* font-weight: 400; */
+}
+
 
 main {
     flex-grow: 1;
     /* background-color: cornflowerblue; */
     /* overflow-y: scroll; */
     padding: 2rem 5rem;
-    margin-top: 5rem;
+    margin-top: 5.5rem;
     
 }
 
@@ -127,7 +154,7 @@ main .img-frame::after {
     content: '';
     height: 80%;
     width: 90%;
-    background-color: darkgoldenrod;
+    /* background-color: darkgoldenrod; */
     background: url('./assets/curtain.jpg');
     /* display: block; */
     position: absolute;
@@ -143,19 +170,26 @@ main .img-frame.no-curtain::after {
 
 
 main #user-guess {
-    position: absolute;
+    position: fixed;
     bottom: 4rem;
     right: 3rem;
     z-index: 100;
-    background-color: cornsilk;
+    background-color: var(--red);
     padding: 1rem 2rem;
     border-radius: 12px;
+    /* font-size: 1.2rem; */
+
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.6rem;
+}
+
+main #user-guess h3 {
+    font-size: 1.3rem;
+    color: var(--black);
 }
 
 main #user-guess .user-input-fields {
@@ -164,15 +198,18 @@ main #user-guess .user-input-fields {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 main #user-guess .user-input-fields input {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     outline: none;
     border: none;
-    background-color: aqua;
+    background-color: var(--purple);
+    color: var(--light-red);
+    font-size: 1.6rem;
+    font-weight: 600;
     /* padding: 0.5rem; */
     border-radius: 5px;
     text-align: center;
@@ -189,13 +226,16 @@ main #user-guess .user-input-fields input::-webkit-inner-spin-button {
 }
 
 main #user-guess .user-input-fields button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     outline: none;
     border: none;
-    background-color: cadetblue;
+    background-color: var(--purple);
     border-radius: 5px;
     text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--light-red);
     /* padding: 0.5rem; */
 }
 
@@ -204,12 +244,13 @@ main .win,
 main .lose {
     display: none;
 
-    position: absolute;
-    bottom: 3rem;
+    position: fixed;
+    bottom: 4rem;
     /*👉top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);👈*/
-    background-color: cornsilk;
+    background-color: var(--red);
+    color: var(--purple);
     z-index: 100;
     padding: 2rem;
     text-align: center;
@@ -223,9 +264,15 @@ main .lose {
     gap: 0.5rem;👈*/
 }
 
+main .win h2,
+main .lose h2 {
+    font-size: 2.5rem;
+    font-family: "Sancreek", serif;
+}
+
 main .win p,
 main .lose p {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     margin-top: 0.3rem;
 }
 
@@ -235,10 +282,11 @@ main .lose button {
     margin-top: 1.75rem;
     width: 60%;
     padding: 0.5rem 1rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     border: none;
     outline: none;
-    background-color: aquamarine;
+    background-color: var(--purple);
+    color: var(--light-red);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -267,15 +315,22 @@ footer #footer-main {
 
 footer #copyright {
     height: 1.25rem;
-    background-color: #e1ac68;
+    /* background-color: #e1ac68; */
     background-color: #9b5e27;
 
     text-align: center;
-    color: gold;
+}
+
+footer #copyright p {
+    /* font-family: "Sancreek", serif; */
+    color: var(--purple);
     letter-spacing: 2px;
 }
 
 footer #copyright a {
     text-decoration: none;
     color: inherit;
+    font-family: "Sancreek", serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
 }

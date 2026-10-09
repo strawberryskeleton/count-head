@@ -341,7 +341,7 @@ footer {
     background-size: contain;
     background-repeat: repeat-x;👈*/
 
-    z-index: 100;
+    /* z-index: 100; */
     position: relative;
 }
 
@@ -377,4 +377,92 @@ footer #copyright a {
 
 footer #copyright a:hover {
     color: var(--light-red);
+}
+
+
+
+/* RESPONSIVE CODE */
+
+/* tablet */
+@media screen and (max-width: 1024px) {
+    * {
+        font-size: 0.8rem;
+    }
+    header {
+        height: 4rem;
+        width: 100%;
+        padding: 0.75rem 2rem;
+    }
+
+    main {
+        margin-top: 6rem;
+    }
+
+    main #user-guess {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 768px) {
+    header {
+        height: 7rem;
+        /* flex-direction: column; */
+        /* text-align: center; */
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+
+    header .logo {
+        height: 4rem;
+    }
+
+    header .title-text {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    header p {
+        top: 0;
+    }
+
+    main {
+        margin-top: 8.5rem;
+        padding: 1rem;
+    }
+
+    main .img-frame.vertical {
+        height: 220px;
+        width: 155px;
+    }
+
+    main .img-frame.horizontal {
+        height: 180px;
+        width: 200px;
+    }
+
+    main #user-guess {
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 15rem;
+        max-width: 380px;
+    }
+
+    main #user-guess .user-input-fields input,
+    main #user-guess .user-input-fields button {
+        width: 4rem;
+        height: 2.5rem;
+        font-size: 1.3rem;
+    }
+
+    main .win,
+    main .lose {
+        bottom: 15rem;
+    }
 }

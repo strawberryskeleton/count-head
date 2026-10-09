@@ -273,19 +273,32 @@ restartBtn.forEach((btn) => {
 const gameOverBoxes = document.querySelectorAll('.win, .lose')
 // console.log(gameOverBoxes)
 
-let pos_x = 0
-let pos_y = 0
-let isDragging = false
-
 gameOverBoxes.forEach((dialogBox) => {
+    let startX = 0
+    let startY = 0
+    let initialLeft = 0
+    let initialTop = 0
+    let isDragging = false
 
     dialogBox.addEventListener('mousedown', (e) => {
         isDragging = true
 
-        pos_x = e.clientX - dialogBox.offsetLeft
-        pos_y = e.clientY - dialogBox.offsetTop
+        startX = e.clientX
+        startY = e.clientY
 
-        dialogBox.style.bottom = `auto`
+        const rect = dialogBox.getBoundingClientRect()
+        initialLeft = rect.left
+        initialTop = rect.top
+
+
+        dialogBox.style.position = 'fixed'
+        dialogBox.style.transform = 'none'
+        dialogBox.style.bottom = 'auto'
+        dialogBox.style.right = 'auto'
+        dialogBox.style.margin = '0'
+
+        dialogBox.style.left = `${initialLeft}px`
+        dialogBox.style.top = `${initialTop}px`
 
         e.preventDefault()
     })
@@ -293,14 +306,15 @@ gameOverBoxes.forEach((dialogBox) => {
     window.addEventListener('mousemove', (e) => {
         if (!isDragging) return
 
-        let left = e.clientX - pos_x
-        let top = e.clientY - pos_y
+    
+        const offsetx = e.clientX - startX
+        const offsety = e.clientY - startY
 
-        dialogBox.style.left = `${left}px`
-        dialogBox.style.top = `${top}px`
+        dialogBox.style.left = `${initialLeft + offsetx}px`
+        dialogBox.style.top = `${initialTop + offsety}px`
     })
 
-    window.addEventListener('mouseup', (e) => {
+    window.addEventListener('mouseup', () => {
         isDragging = false
     })
 })

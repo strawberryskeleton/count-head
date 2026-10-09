@@ -8,6 +8,14 @@ you are count count head, he who never counts heads wrong. on your castle wall, 
 - count head's castle theme
 - sound effects (bg music, win and lose effects)
 - made by me, no ai!!
+- responsive
+
+#### Tools Used
+- HTML5
+- CSS3
+- Vanilla JS
+- VS Code (with live server extension) for coding
+
 
 ## Screenshots
 project screenshot
